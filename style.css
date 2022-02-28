@@ -6,7 +6,7 @@ h1{
     text-align: center;
 }
 
-.button{
-    display: flex;
-    align-items: center;
+.start-button{
+    margin: 0 auto;
+    display: block;
 }
