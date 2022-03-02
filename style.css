@@ -6,7 +6,7 @@ h1{
     text-align: center;
 }
 
-.start-button{
+#start-button{
     margin: 0 auto;
     display: block;
 }
