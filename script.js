@@ -1,10 +1,10 @@
 
-var contentEl = document.querySelector('.content');
-var questionsMenuEl = document.querySelector('#questions-menu');
-var endMenuEl = document.querySelector('#end-menu');
+var contentEl = document.getElementById('.content');
+var questionsMenuEl = document.getElementById('#questions-menu');
+var endMenuEl = document.getElementById('#end-menu');
 
-var startButton = document.querySelector('#start-button');
-var initials = document.querySelector('#initials');
+var startButton = document.getElementById('#start-button');
+var formInitials = document.getElementById('#initials');
 
 var cursor = 0;
 
@@ -42,6 +42,14 @@ function endScreen() {
   questionsMenuEl.style.display = "none";
   endMenuEl.style.display = "block";
 }
+//submit initials ---form input
+function form() {
+    var formInitials = document.getElementById('#initials');
+
+    // will remove initials after submit is clicked
+    formInitials.innerhtml = ""; 
+}
+
 
 function init() {
   startScreen();
@@ -93,6 +101,6 @@ start timer
         if wrong, penalize score time by ten seconds
         else correct, move on to next question
         after last question stop the timer
- at the end save/submit initials ---form input
+ 
 clear score/go back---- 
 // give option to view past scores --- local storage*/
