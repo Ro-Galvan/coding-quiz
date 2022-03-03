@@ -1,5 +1,4 @@
-
-var contentEl = document.getElementById('.content');
+var contentEl = document.getElementsByClassName('.content');
 var questionsMenuEl = document.getElementById('#questions-menu');
 var endMenuEl = document.getElementById('#end-menu');
 
@@ -8,16 +7,18 @@ var formInitials = document.getElementById('#initials');
 
 var cursor = 0;
 
-var questions = {
-  choices: [
-    "strings",
-    "booleans",
-    "alerts",
-    "numbers",
-  ],
+var questions = [
+{
+Q: "Where do you place the script tag for external js files?",
+  A: ['in the head of the html file', 
+    'it links itself',
+    'after the opening body tag in the html file', 
+    'before the closing body tag in the html file'],
   correct: 2
-};
+}
+];
 
+//instructor provided to help
 function startScreen() {
   contentEl.style.display = "block";
   questionsMenuEl.style.display = "none";
@@ -28,12 +29,18 @@ function gameScreen() {
   contentEl.style.display = "none";
   questionsMenuEl.style.display = "block";
   endMenuEl.style.display = "none";
+  displayQuestion();
+}
 
-  for (var i = 0; i < questions.choices.length; i++) {
-    var item = questions.choices[i];
-    var answerBtn = document.createElement('button');
-    answerBtn.textContent = i + 1 + ". " + item;
-    questionsMenuEl.appendChild(answerBtn);
+
+function displayQuestion() {
+    var qestn = questions[cursor];
+    questions
+  for (var i = 0; i < qestn.choices.length; i++) {
+    var item = qestn.A[i];
+    var btn = document.createElement('button');
+    btn.textContent = i + 1 + ". " + item;
+    questionsMenuEl.appendChild(btn);
   }
 }
 
@@ -58,6 +65,7 @@ function init() {
 startButton.addEventListener('click', gameScreen);
 questionsMenuEl.addEventListener('click', endScreen);
 
+
 init();
 
 
@@ -77,10 +85,10 @@ init();
 //         answer: "alerts"
 //     },
 
-function startGame (){
-// setInterval(function()  {
-// console.log('hello')    
-// }, 1000);
+function startGame(){
+setInterval(function()  {
+console.log('hello')    
+}, 1000);
 };
 
 var counter = 5
