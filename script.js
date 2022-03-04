@@ -17,39 +17,39 @@ q: "Where do you place the script tag for external js files?",
 },
 
 {
-  q: "Where do you place the script tag for external js files?",
-    a: ['in the head of the html file', 
-      'it links itself',
-      'after the opening body tag in the html file', 
-      'before the closing body tag in the html file'],
-    correct: 2
+  q: "Which of the following is NOT a primitive type?",
+    a: ['object', 
+      'null',
+      'string', 
+      'number'],
+    correct: 1
   },
 
   {
-    q: "Where do you place the script tag for external js files?",
-      a: ['in the head of the html file', 
-        'it links itself',
-        'after the opening body tag in the html file', 
-        'before the closing body tag in the html file'],
-      correct: 1
+    q: "Which symbol is used for a simple assignment operator?",
+      a: ['@, 
+        '=',
+        '^', 
+        '~'],
+      correct: 2
     },
 
     {
-      q: "Where do you place the script tag for external js files?",
-        a: ['in the head of the html file', 
-          'it links itself',
-          'after the opening body tag in the html file', 
-          'before the closing body tag in the html file'],
+      q: "What does DOM stand for?",
+        a: ['Document of Model', 
+          'Domain Object Machine',
+          'Document Object Model', 
+          'Developer of Machines'],
         correct: 3
       },
 
       {
-        q: "Where do you place the script tag for external js files?",
-          a: ['in the head of the html file', 
-            'it links itself',
-            'after the opening body tag in the html file', 
-            'before the closing body tag in the html file'],
-          correct: 2
+        q: "A function does not work until you do what?",
+          a: ['call/invoke it', 
+            'used DOM',
+            'link it to css', 
+            'none of the above'],
+          correct: 1
         },
 ];
 
@@ -74,6 +74,9 @@ function displayQuestion() {
     var div = document.createElement('div'); //this needs to be a tag 
      div.textContent = questionSelected.q
     questionsEl.appendChild(div);
+    
+    // for loop used to create 1 button for answer  
+
   for (var i = 0; i < questionSelected.a.length; i++) {
     var item = questionSelected.a[i];
     var btn = document.createElement('button');
