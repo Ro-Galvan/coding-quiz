@@ -100,17 +100,20 @@ function forminput() {
     formInitials.innerhtml = ""; 
 }
 
+
 function init() {
   startScreen();
 }
 
 startButton.addEventListener('click', gameScreen);
-//Removed endscreen with function (event)
+ 
+// displays next question
 questionsEl.addEventListener('click', function (event) {
-  if (event.target.matches('btn')) {
-    console.log(event.target);
-    cursor++;
-    if (cursor < questions.length) {
+  if (event.target.matches('button')) {
+    var userGuess = Array.prototype.indexOf.call(questionsEl, event.target);
+    console.log(userGuess);
+    currentQNum++;
+    if (currentQNum < questions.length) {
       displayQuestion();
     } else {
       endScreen();
