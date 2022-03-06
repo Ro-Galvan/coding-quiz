@@ -13,7 +13,7 @@ q: "Where do you place the script tag for external js files?",
     'it links itself',
     'after the opening body tag in the html file', 
     'before the closing body tag in the html file'],
-  correct: 4
+  correct: 3
 },
 
 {
@@ -22,16 +22,16 @@ q: "Where do you place the script tag for external js files?",
       'null',
       'string', 
       'number'],
-    correct: 1
+    correct: 0
   },
 
   {
     q: "Which symbol is used for a simple assignment operator?",
-      a: ['@, 
-        '=',
-        '^', 
-        '~'],
-      correct: 2
+      a: ['\@', 
+        '\=',
+        '\^', 
+        '\~'],
+      correct: 1
     },
 
     {
@@ -40,7 +40,7 @@ q: "Where do you place the script tag for external js files?",
           'Domain Object Machine',
           'Document Object Model', 
           'Developer of Machines'],
-        correct: 3
+        correct: 2
       },
 
       {
@@ -49,7 +49,7 @@ q: "Where do you place the script tag for external js files?",
             'used DOM',
             'link it to css', 
             'none of the above'],
-          correct: 1
+          correct: 0
         },
 ];
 
@@ -70,13 +70,13 @@ console.log('does this work-gamescreen??');
 
 function displayQuestion() {
   questionsEl.innerHTML = '';
-    var questionSelected = questions[currentQNum]; //take ? array and grab element that is position [0]
-    var div = document.createElement('div'); //this needs to be a tag 
+  //takes question array and grabs element that is position [0]
+    var questionSelected = questions[currentQNum]; 
+    var div = document.createElement('div'); 
      div.textContent = questionSelected.q
     questionsEl.appendChild(div);
     
     // for loop used to create 1 button for answer  
-
   for (var i = 0; i < questionSelected.a.length; i++) {
     var item = questionSelected.a[i];
     var btn = document.createElement('button');
@@ -132,16 +132,3 @@ var myTimer = setInterval(function()  {
     if (counter <= 0) clearInterval(myTimer) 
     console.log(counter--)    
     }, 1000);
-
-/*start button----done but need to --google javascript replace variable on page
-start timer
-    remove inital elements from page 
-    display 1st question
-        display the 4 choices 
-        handle the answer based on choice clicked
-        if wrong, penalize score time by ten seconds
-        else correct, move on to next question
-        after last question stop the timer
- 
-clear score/go back---- 
-// give option to view past scores --- local storage*/
